@@ -1,7 +1,9 @@
+import clsx from "clsx";
 import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { Ingram, Pragmatica } from "@/assets/fonts";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -14,7 +16,14 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="ru" className="page _home _desktop">
+		<html
+			lang="ru"
+			className={clsx(
+				"page _home _desktop",
+				Ingram.variable,
+				Pragmatica.variable
+			)}
+		>
 			<head>
 				<meta name="color-scheme" content="light dark" />
 				<meta
@@ -26,19 +35,6 @@ export default function RootLayout({
 					name="theme-color"
 					content="#111213"
 					media="(prefers-color-scheme: dark)"
-				/>
-
-				<link
-					rel="preload"
-					href="/assets/fonts/pragmatica_book.woff2"
-					as="font"
-					type="font/woff2"
-				/>
-				<link
-					rel="preload"
-					href="/assets/fonts/pragmatica_medium.woff2"
-					as="font"
-					type="font/woff2"
 				/>
 			</head>
 			<body className="page__body">
