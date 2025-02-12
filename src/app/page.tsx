@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
 		description: seo.description,
 		keywords: seo.keywords,
 		openGraph: {
-			url: new URL(seo.image, process.env.API_URL),
+			url: seo.image,
 		},
 	};
 }
