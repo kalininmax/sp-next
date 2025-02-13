@@ -8,7 +8,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 
 async function getHomePage() {
-	const res = await fetch("http://5693366a1538.vps.myjino.ru:49506/main", {
+	const res = await fetch(new URL("/main", process.env.API_URL), {
 		cache: "force-cache",
 	});
 	const data = await res.json();
